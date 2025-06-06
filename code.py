@@ -5,8 +5,8 @@ import sys
 pygame.init()
 
 
-width, height = 400, 400
-rows, cols = 10, 10  # 10x10 grid
+width, height = 700, 700
+rows, cols = 30, 30  # 10x10 grid
 cell_width = width // cols
 cell_height = height // rows
 
