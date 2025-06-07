@@ -1,19 +1,23 @@
 import Main
+import pygame
 
-X, Y = 0, 0
-img = 0
-overlay = "none"
+pygame.init()
 
-def __init__(X, Y, img, self):
-    self.X = X
-    self.Y = Y
-    self.img = img
+class Tile:
+    X, Y = 0, 0
+    img = 0
+    overlay = "none"
 
-def getPixelX(self):
-    return ((self.X - Main.playerX) * Main.cell_size) + Main.offsetX
+    def __init__(self, X, Y, img):
+        self.X = X
+        self.Y = Y
+        self.img = img
 
-def getPixelY(self):
-    return ((self.Y - Main.playerY) * Main.cell_size) + Main.offsetY
+    def getPixelX(self):
+        return ((self.X - Main.playerX) * Main.cell_size) + Main.offsetX
 
-def draw(self):
-    Main.window.blit(self.img, (getPixelX(self.X), getPixelY(self.Y)))
+    def getPixelY(self):
+        return ((self.Y - Main.playerY) * Main.cell_size) + Main.offsetY
+
+    def draw(self):
+        Main.window.blit(self.img, (getPixelX(self.X), getPixelY(self.Y)))

@@ -1,11 +1,11 @@
 import pygame
 import sys
-import Tile
+from tile import Tile
 
 pygame.init()
 
 width, height = 700, 700
-rows, cols = 30, 30  
+rows, cols = 30, 30
 cell_size = 40
 def loadImage(S):
     pygame.transform.scale(pygame.image.load(S), (cell_size,cell_size))
@@ -20,6 +20,10 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    for ypos in range(0, cols):
+        for xpos in range(0, rows):
+            grid[xpos][ypos].draw()
 
     pygame.display.flip()
 
