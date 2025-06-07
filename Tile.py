@@ -4,7 +4,7 @@ X, Y = 0, 0
 img = 0
 overlay = "none"
 
-def __init__(self, X, Y, img):
+def __init__(X, Y, img, self):
     self.X = X
     self.Y = Y
     self.img = img
