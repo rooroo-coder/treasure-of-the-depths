@@ -20,4 +20,4 @@ class Tile:
         return ((self.Y - Main.playerY) * Main.cell_size) + Main.offsetY
 
     def draw(self):
-        Main.window.blit(self.img, (getPixelX(self.X), getPixelY(self.Y)))
+        Main.window.blit(self.img, (Tile.getPixelX(self.X), Tile.getPixelY(self.Y)))

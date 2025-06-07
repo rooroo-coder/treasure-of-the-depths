@@ -1,6 +1,6 @@
 import pygame
 import sys
-from tile import Tile
+from tile import __init__
 
 pygame.init()
 
@@ -10,7 +10,8 @@ cell_size = 40
 def loadImage(S):
     pygame.transform.scale(pygame.image.load(S), (cell_size,cell_size))
 tileTypes = [loadImage('sprites/floor.png'), loadImage('sprites/wall.png')]
-grid = [[Tile(tileTypes[0], x, y) for x in range(rows)] for y in range(cols)]
+grid = [[Tile(x, y, tileTypes[0]) for x in range(rows)] for y in range(cols)]
+player = loadImage('spites/player_sprite.png')
 
 window = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Treasure of The Depths")
@@ -21,9 +22,9 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    for ypos in range(0, cols):
-        for xpos in range(0, rows):
-            grid[xpos][ypos].draw()
+    for y in range(0, cols):
+        for x in range(0, rows):
+            grid[x][y].draw()
 
     pygame.display.flip()
 
